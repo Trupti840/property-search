@@ -3,8 +3,12 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.db.models import Property
 from app.db.session import get_db
+from app.api.search import router as search_router
+from app.api.search import router as search_router
 
 app = FastAPI(title="Property Search")
+app.include_router(search_router)
+app.include_router(search_router)
 
 POSSESSION = {0: "ready_to_move", 1: "under_construction"}
 
